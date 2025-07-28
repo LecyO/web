@@ -384,7 +384,7 @@ aside img {
 }
 .exercise-section h3 {
     color: var(--yelow);
-    font-family: 'frekoka', cursive;
+    font-family: 'frekoka';
     margin-bottom: 20px;
 }
 .exercise-section a {
