@@ -444,19 +444,31 @@ body {
   font-weight: bold;
 }
 
-/* Ajustes para pantallas de tabletas (min-width: 768px) */
-@media (min-width: 768px) {
+/* Ajustes*/
+@media (min-width: 480px) {
     .carousel-item img {
         min-height: 450px;
     }
 
+    .carousel-caption{
+      margin-top: 50%;
+    }
+
+    .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin: 8px auto;
+    max-width: 80%;
+  }
+
     .Go {
-        padding: 15px 35px;
-        font-size: 1.2em;
+        padding: 20px 20px;
+        font-size: 0.9em;
+        top: 40%;
     }
 
     .carousel-caption h5 {
-        font-size: 2.2em;
+        font-size: 2rem;
     }
 
     .carousel-caption p {
