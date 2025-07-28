@@ -399,7 +399,7 @@ body {
 }
 
 /* Ajustes*/
-@media (min-width: 400px) {
+@media (min-width: 375px) {
     .carousel-item img {
         min-height: 450px;
     }
