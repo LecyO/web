@@ -242,6 +242,8 @@ aside img {
     padding-top: 20px;
 }
 
+/*------IMAGEN calculadora------*/
+
 .extra-content {
     position: relative;
     display: flex;
@@ -250,12 +252,12 @@ aside img {
 }
 
 .material-symbols-outlined{
-    color: var(--yelow);
-    width: 10px;
+    color: var(--blu);
+  
 }
 
 .material-symbols-outlined:hover{
-    color: var(--red);
+    color: var(--yelow);
 }
 
 .extra-content .icon-link {
@@ -263,7 +265,7 @@ aside img {
     cursor: pointer;
 }
 
-.extra-content .pita {
+.extra-content .calcu {
     position: absolute;
     top: 100%;
     left: 50%;
@@ -278,7 +280,7 @@ aside img {
 }
 
 /* mostrar imagen al pasar el mouse por el enlace */
-.extra-content .icon-link:hover + .pita {
+.extra-content .icon-link:hover + .calcu {
     opacity: 1;
 }
 
