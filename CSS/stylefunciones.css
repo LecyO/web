@@ -242,39 +242,55 @@ aside img {
     padding-top: 20px;
 }
 
-.extra-content .material-symbols-outlined{
-    position: relative;
-    color: var(--yelow);
-    left: 95%;
-    top: 900px;
-    cursor: pointer;
+/*GATO VIDEO*/
+.extra-content {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
 }
 
-.extra-content .pita {
-    position: absolute;
-    top: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    opacity: 0;
-    transition: opacity 0.4s ease, transform 0.4s ease;
-    border-radius: 10%;
-    cursor: pointer;
-    box-shadow: 0px 0px 10px 9px var(--yelow);
-    z-index: 105;
-      transform: translate(50%, -50%) scale(0); 
-
+.material-symbols-outlined {
+  font-size: 50px;
+  color: var(--blu);
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.extra-content .material-symbols-outlined:hover{
-    color: var(--darkblu);
+.material-symbols-outlined:hover {
+  color: var(--darkblu);
 }
 
-.material-symbols-outlined:hover .pita{
+.contenedor-gato {
+  margin-top: 20px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease, max-height 0.6s ease;
+}
+
+@media (hover: hover) {
+  /* En computadoras*/
+  .extra-content:hover .contenedor-gato {
     opacity: 1;
-    transform: translateX(-50%) scale(1.1);
+    max-height: 500px;
+  }
 }
 
+/*En telefonos*/
+.contenedor-gato.active {
+  opacity: 1;
+  max-height: 500px;
+}
+
+.gato {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+
+/*CONTENIDO*/
 .content-card {
     background-color: var(--transecondary);
     border-radius: 15px;
