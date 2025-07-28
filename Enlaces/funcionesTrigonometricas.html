@@ -28,11 +28,13 @@
     <main class="container my-5">
         <h2 class="section-title">Aplicando las Funciones Trigonométricas</h2>
 
-        <div class="extra-content">
-            <span class="material-symbols-outlined">multimodal_hand_eye</span>       
-            <a href="https://es.wikipedia.org/wiki/Pit%C3%A1goras">
-                <img class="pita" src="../Imagenes/teorema_pitágoras/pitagoras.jpg" alt="Bibliografía de Pitágoras">
-            </a>
+        <!--Gato videp-->
+        <div class="extra-content" id="extraContent">
+        <span class="material-symbols-outlined icon-link" onclick="mostrarVideoMovil()">multimodal_hand_eye</span>
+
+        <div class="contenedor-gato" id="gatoContenedor">
+            <video controls class="gato" src="../Videos/gato trigonometrico.mp4"></video>
+        </div>
         </div>
 
         <div class="row">
@@ -110,6 +112,49 @@
         reset: false
     });
     ScrollReveal().reveal('.exercise-section', { delay: 500 });
+</script>
+
+<script>
+  function esMovil() {
+    return window.matchMedia("(hover: none)").matches; // quita la función hover
+  }
+
+  function mostrarVideoMovil() {
+    if (esMovil()) {
+      const contenedor = document.getElementById("gatoContenedor");
+      const video = contenedor.querySelector("video");
+
+      contenedor.classList.toggle("active");
+
+      if (contenedor.classList.contains("active")) {
+        video.currentTime = 0;  // Reinicia 
+        video.play();           // Reproduce
+      } else {
+        video.pause();          // Lo pausa 
+        video.currentTime = 0;
+        // en computadora no se pausa solo TT
+      }
+    }
+  }
+
+  //para computadora: hover = reproducir
+  if (!esMovil()) {
+    const icono = document.querySelector('.icon-link');
+    const contenedor = document.getElementById("gatoContenedor");
+    const video = contenedor.querySelector("video");
+
+    icono.addEventListener('mouseenter', () => {
+      contenedor.classList.add("active");
+      video.currentTime = 0;
+      video.play();
+    });
+
+    icono.addEventListener('mouseleave', () => {
+      contenedor.classList.remove("active");
+      video.pause();
+      video.currentTime = 0;
+    });
+  }
 </script>
 
     </body>
