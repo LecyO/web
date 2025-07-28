@@ -1,0 +1,230 @@
+:root {
+    --darkblu: rgb(29, 35, 123);
+    --blu: rgb(77, 161, 221);
+    --yelow: rgb(212, 195, 65);
+    --red: rgb(195, 67, 35);
+    --primary: rgb(148, 148, 148); /* Para sombras y acentos */
+    --secondary: rgb(69, 69, 69); /* Color de fondo original del body y aside */
+    --transecondary: rgba(69,69,69, 0.6); /*fondo semi-transparente claro */
+    --terciary: rgb(215, 215, 215); /* Color de texto claro */
+    --fourty: rgb(23, 23, 23); /* Fondo principal (alternativo si prefieres más oscuro) */
+    --transfourty: rgba(23, 23, 23, 0.7); /* Fondo semi-transparente para captions */
+    --fifty: rgb(86, 86, 86); /* Fondo del botón Empezar */
+}
+
+/*-----------------------BODY-----------------------*/
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-image: url(../Imagenes/fondos/fondoRojo.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center ;
+    color: var(--terciary);
+    margin: 0; /* Elimina todos los márgenes por defecto del body */
+    padding: 0; /* Elimina todo el padding por defecto del body */
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    display: block; /* Asegura que el body se comporte como bloque y los elementos se apilen */
+}
+
+
+/*----------------------------------------------ESTILOS ESPECÍFICOS DE EJERCICIOSRAZONES.HTML----------------------------------------------*/
+.exercise-container {
+    background-color: var(--secondary);
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+    padding: 30px;
+    margin-bottom: 30px;
+    color: var(--terciary);
+    text-align: center;
+}
+.exercise-container h3 {
+    font-family: 'Coming Soon', cursive;
+    color: var(--yelow);
+    margin-bottom: 25px;
+    font-size: 2em;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+.exercise-type { /* Nuevo estilo para el tipo de ejercicio */
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.7em; /* Más pequeño que el título del ejercicio */
+    color: var(--primary); /* O el color que prefieras para destacarlo */
+    display: block; /* Para que aparezca en una nueva línea o debajo del título */
+    margin-top: 5px;
+}
+.exercise-question p {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.exercise-diagram {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+.input-group-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+.input-group-custom label {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1em;
+    color: var(--terciary);
+    margin-right: 10px;
+    margin-bottom: 10px; /* Espacio para el wrap */
+    min-width: 80px; /* Asegura que la etiqueta tenga un ancho mínimo */
+    text-align: right;
+}
+.input-group-custom input[type="text"] { /* Cambiado a type="text" */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary);
+    background-color: var(--fourty);
+    color: var(--terciary);
+    font-size: 1.1em;
+    width: 120px; /* Ancho fijo para el input */
+    text-align: center;
+    margin-bottom: 10px; /* Espacio para el wrap */
+}
+.btn-check-answer {
+    background-color: var(--blu);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+.btn-check-answer:hover {
+    background-color: var(--darkblu);
+}
+.feedback {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+}
+.feedback.correct {
+    color: limegreen;
+}
+.feedback.incorrect {
+    color: var(--red);
+}
+.next-exercise-btn {
+    background-color: var(--fifty);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    display: block; /* Oculto por defecto */
+}
+.next-exercise-btn:hover {
+    background-color: var(--darkblu);
+}
+.solution-text {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: var(--primary);
+    display: none; /* Oculto por defecto */
+    text-align: left; /* Para que las soluciones largas se lean mejor */
+    text-align: justify;
+} 
+.solution-text p {
+    margin-bottom: 5px; /* Espacio entre líneas de solución */
+}
+
+
+/* Media Queries para responsividad de ejerciciosTrigonometria.html */
+@media (max-width: 576px) { /* Móviles pequeños */
+    .input-group-custom {
+        flex-direction: column; /* Apila etiquetas e inputs en pantallas muy pequeñas */
+        align-items: center;
+    }
+    .input-group-custom label {
+        text-align: center;
+        width: 100%;
+        margin-right: 0;
+    }
+    .input-group-custom input {
+        max-width: 150px; /* Limita el ancho del input en móviles */
+        width: 100%;
+    }
+    .btn-check-answer {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .exercise-type {
+        font-size: 0.6em;
+    }
+}
+
+@media (min-width: 768px) {
+    .exercise-container h3 {
+        font-size: 2.5em;
+    }
+    .exercise-question p {
+        font-size: 1.3em;
+    }
+    .input-group-custom input[type="text"] {
+        width: 150px;
+    }
+    .btn-check-answer {
+        font-size: 1.2em;
+    }
+    .exercise-type {
+        font-size: 0.8em;
+        display: inline; /* Vuelve a línea si hay espacio */
+        margin-left: 10px;
+    }
+}
+@media (min-width: 992px) {
+    .exercise-container h3 {
+        font-size: 3em;
+    }
+    .exercise-question p {
+        font-size: 1.4em;
+    }
+    .input-group-custom input[type="text"] {
+        width: 180px;
+    }
+    .exercise-type {
+        font-size: 0.9em;
+    }
+}
+.btn-check-answer {
+    background-color: var(--blu);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px; 
+    display: block;
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+    width: fit-content; /* Ocupa solo el ancho de su contenido */
+}
+@media (max-width: 576px) {
+    .btn-check-answer {
+        max-width: 100%; /* Permite que el botón ocupe casi todo el ancho disponible */
+        padding: 10px 20px; /* Un poco menos padding en móviles pequeños */
+        font-size: 1em; /* Un poco más pequeño en móviles */
+    }
+    }

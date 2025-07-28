@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Funciones Trigonométricas - Guía de Trigonometría</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+
+    <link href="../Iconos/Logo Grebil.png" type="image/x-icon" rel="shortcut icon">
+
+    <link rel="stylesheet" href="../CSS/stylefunciones.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Coming+Soon&family=Fredoka:wght@300..700&family=Paytone+One&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Estilos específicos para este nuevo enfoque de mostrar/ocultar ejercicios */
+        .exercise-item {
+            display: none;
+            /* Oculta todos los ejercicios por defecto */
+        }
+
+        .exercise-item.active {
+            display: block;
+            /* Muestra solo el ejercicio activo */
+        }
+
+        .solution-title {
+            font-family: 'Cal Sans', sans-serif;
+            font-weight: bold;
+            font-size: 2em;
+            text-align: left;
+            /* Centra el título de la solución */
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .solution-content {
+            font-family: 'Cal Sans', sans-serif;
+            line-height: 2.2;
+            font-size: 1.1em;
+            text-align: justify;
+            /* Justifica el contenido de la solución */
+        }
+
+        /* Estilos para el feedback */
+        .feedback p {
+            margin-bottom: 0.5rem;
+            font-size: 0.95em;
+        }
+
+        .feedback p.correct {
+            color: green;
+            font-weight: bold;
+        }
+
+        .feedback p.incorrect {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-dark py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="../index.html" class="btn btn-outline-light">
+                <i class="bi bi-arrow-left"></i> Volver al Inicio
+            </a>
+            <h1 class="text-white h4 mb-0" style="font-family: 'Righteous', cursive;">Ejercicios de Funciones
+                Trigonométricas</h1>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <h2 class="section-title">¡A Practicar Funciones Trigonométricas!</h2>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="exercise-container">
+                    <div id="exercise1" class="exercise-item">
+                        <h3>Ejercicio 1 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>1. Un observador a 30 metros de la base de un edificio, mira la parte más alta con un
+                                ángulo de elevación de 45°.
+                                ¿Cuál es la altura del edificio?</p>
+                            <img src="../Imagenes/funciones_trigonometricas/ejercicio1.jpg"
+                                alt="Diagrama de un observador, edificio y ángulo de elevación."
+                                class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta1Altura">Altura del edificio (metros):</label>
+                            <input type="text" id="respuesta1Altura">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(1)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage1"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="exercise2" class="exercise-item">
+                        <h3>Ejercicio 2 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>2. Desde la cima de una torre de 50 metros de altura, el ángulo de depresión a un coche
+                                es de 30°.
+                                ¿A qué distancia horizontal de la base de la torre se encuentra el coche? Redondea tu
+                                respuesta a dos decimales.</p>
+                            <img src="../Imagenes/funciones_trigonometricas/ejercicio2.jpg" alt="Diagrama de una torre, coche y ángulo de depresión."
+                                class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta2Distancia">Distancia al coche (metros):</label>
+                            <input type="text" id="respuesta2Distancia">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(2)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage2"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="exercise3" class="exercise-item">
+                        <h3>Ejercicio 3 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>3. Un avión vuela a una altitud de 1200 metros. Si el ángulo de depresión desde el avión
+                                a la pista de aterrizaje es de 20°,
+                                ¿Cuál es la distancia en línea recta (hipotenusa) desde el avión hasta la pista?
+                                Redondea tu respuesta a dos decimales.</p>
+                            <img src="../Imagenes/funciones_trigonometricas/ejercicio3.png"
+                                alt="Diagrama de un avión, altitud y ángulo de depresión a una pista."
+                                class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta3DistanciaAvion">Distancia del avión a la pista (metros):</label>
+                            <input type="text" id="respuesta3DistanciaAvion">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(3)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage3"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="exercise4" class="exercise-item">
+                        <h3>Ejercicio 4 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>4. Una escalera de 15 metros está apoyada contra una pared. Si la base de la escalera
+                                forma un ángulo de 60° con el suelo.
+                                ¿A qué distancia horizontal de la pared está la base de la escalera?</p>
+                            <img src="../Imagenes/funciones_trigonometricas/ejercicio4.png"
+                                alt="Diagrama de una escalera apoyada en una pared." class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta4DistanciaPared">Distancia a la pared (metros):</label>
+                            <input type="text" id="respuesta4DistanciaPared">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(4)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage4"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="exercise5" class="exercise-item">
+                        <h3>Ejercicio 5 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>5. Una niña suelta una cometa con una cuerda de 80 metros de largo. Si la cometa se
+                                encuentra a una altura de 60 metros sobre el suelo,
+                                ¿Cuál es el ángulo de elevación de la cometa respecto a la niña? Redondea tu respuesta a
+                                un decimal.</p>
+                            <img src="../Imagenes/funciones_trigonometricas/ejercicio5.png" alt="Diagrama de un niño con cometa, altura y cuerda."
+                                class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta5Angulo">Ángulo de elevación (grados):</label>
+                            <input type="text" id="respuesta5Angulo">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(5)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage5"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="completionMessage" class="exercise-item">
+                        <h3>¡Felicidades!</h3>
+                        <p>Has aplicado las Funciones Trigonométricas con éxito. ¡Sigue practicando!
+                        </p>
+                        <button class="btn-check-answer" onclick="location.href='../index.html'">Volver al Inicio
+                        </button>
+                        <button class="next-exercise-btn" style="display: block;" onclick="resetExercises()">Reiniciar
+                            Ejercicios</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>© 2025 Guía a la Trigonometría. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        // Configuración de MathJax
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']] // Delimitadores para MathJax en línea
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+
+        // Función para limpiar y normalizar la entrada del usuario
+        function normalizeInput(input) {
+            // Convierte la entrada a cadena y reemplaza comas por puntos, y elimina espacios en blanco
+            input = String(input).replace(',', '.').trim();
+
+            // Intenta manejar fracciones como "a/b"
+            if (input.includes('/')) {
+                const parts = input.split('/');
+                if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+                    const numerator = parseFloat(parts[0]);
+                    const denominator = parseFloat(parts[1]);
+                    // Asegurar de que el denominador no sea cero para evitar división por cero
+                    if (denominator !== 0) {
+                        return numerator / denominator;
+                    }
+                }
+            }
+            // Si no es una fracción válida o no contiene '/', intenta convertir directamente a flotante
+            return parseFloat(input);
+        }
+
+        // Definición de las respuestas correctas para cada ejercicio
+        const correctAnswers = {
+            1: { // Altura = tan(45) * 30 = 1 * 30 = 30
+                altura: 30
+            },
+            2: { // Distancia = 50 / tan(30) = 50 / 0.58 = 86.21
+                distancia: 86.21
+            },
+            3: { // Distancia avión a pista (hipotenusa) = 1200 / sen(20) = 1200 / 0.34 = 3529.41
+                distanciaAvion: 3529.41
+            },
+            4: { // Distancia = cos(60) * 15 = 0.5 * 15 = 7.5
+                distanciaPared: 7.5
+            },
+            5: { // sen(angulo) = 60 / 80 = 0.75. Angulo =  sin⁻¹(0.75) = 48.6
+                angulo: 48.6
+            }
+        };
+
+        const allSolutionsContent = {
+            1: `
+                Para el Ejercicio 1, tenemos un triángulo rectángulo donde:
+                <ul>
+                    <li>El ángulo de elevación es 45°.</li>
+                    <li>La distancia del observador a la base del edificio es el cateto adyacente (ca) = 30 metros.</li>
+                    <li>La altura del edificio es el cateto opuesto (co), que es lo que buscamos.</li>
+                </ul>
+                La función trigonométrica que relaciona el cateto opuesto, el cateto adyacente y el ángulo es la tangente:
+                <ul>
+                    <li>tan(θ) = cateto opuesto / cateto adyacente</li>
+                    <li>tan(45°) = altura / 30 m</li>
+                    <li>Despejando la formula para altura: altura = tan(45°) * 30 m</li>
+                    <li>Sabemos que tan(45°) = 1</li>
+                    <li>Así que, altura = 1 * 30 m = 30 m</li>
+                </ul>
+                La altura del edificio es de 30 metros.
+            `,
+            2: `
+                Para el Ejercicio 2, formamos un triángulo rectángulo con la torre y el coche:
+                <ul>
+                    <li>La altura de la torre es el cateto opuesto (co) al ángulo de depresión = 50 metros. (El ángulo de depresión desde la cima es igual al ángulo de elevación desde el coche, por ángulos alternos internos).</li>
+                    <li>La distancia horizontal al coche es el cateto adyacente (ca), que es lo que buscamos.</li>
+                    <li>El ángulo de depresión (o elevación) es 30°.</li>
+                </ul>
+                Usamos la función tangente:
+                <ul>
+                    <li>tan(θ) = cateto opuesto / cateto adyacente</li>
+                    <li>tan(30°) = 50 m / distancia</li>
+                    <li>Despejando la formula para la distancia: distancia = 50 m / tan(30°)</li>
+                    <li>Usando una calculadora, tan(30°) ≈ 0.58</li>
+                    <li>distancia = 50/0.58 ≈ 86.21 m</li>
+                </ul>
+                Redondeando a dos decimales, la distancia horizontal al coche es de 86.21 metros.
+            `,
+            3: `
+                Para el Ejercicio 3, el avión, su altitud y la distancia a la pista forman un triángulo rectángulo:
+                <ul>
+                    <li>La altitud del avión es el cateto opuesto (co) al ángulo de depresión = 1200 metros.</li>
+                    <li>El ángulo de depresión es 20°.</li>
+                    <li>La distancia en línea recta desde el avión hasta la pista es la hipotenusa (h), que es lo que buscamos.</li>
+                </ul>
+                Usamos la función seno, que relaciona el cateto opuesto y la hipotenusa:
+                <ul>
+                    <li>sen(θ) = cateto opuesto / hipotenusa</li>
+                    <li>sen(20°) = 1200 m / distancia</li>
+                    <li>Despejando la formula para la distancia: distancia = 1200 m / sen(20°)</li>
+                    <li>Usando una calculadora, sen(20°) ≈ 0.34</li>
+                    <li>distancia = 1200/0.34 ≈ 3529.41 m</li>
+                </ul>
+                Redondeando a dos decimales, la distancia del avión a la pista es de 3529.41 metros.
+            `,
+            4: `
+                 Para el Ejercicio 4, la escalera, la pared y el suelo forman un triángulo rectángulo:
+    <ul>
+        <li>La longitud de la escalera es la hipotenusa (h) = 15 metros.</li>
+        <li>El ángulo que forma la base de la escalera con el suelo es 60°.</li>
+        <li>La distancia horizontal de la base de la escalera a la pared es el cateto adyacente (ca), que es lo que buscamos.</li>
+    </ul>
+    Usamos la función coseno, que relaciona el cateto adyacente y la hipotenusa:
+    <ul>
+        <li>cos(θ) = cateto adyacente / hipotenusa</li>
+        <li>cos(60°) = distancia / 15 m</li>
+        <li>Despejando la formula para la distancia: distancia = cos(60°) * 15 m</li>
+        <li>Sabemos que cos(60°) = 0.5</li>
+        <li>Así que, distancia = 0.5 * 15 m = 7.5 m</li>
+    </ul>
+    Redondeando a dos decimales, la distancia horizontal a la pared es de 7.5 metros.
+`,
+            5: `
+                Para el Ejercicio 5, la cometa, su altura y la cuerda forman un triángulo rectángulo:
+                <ul>
+                    <li>La longitud de la cuerda es la hipotenusa (h) = 80 metros.</li>
+                    <li>La altura de la cometa sobre el suelo es el cateto opuesto (co) al ángulo de elevación = 60 metros.</li>
+                    <li>El ángulo de elevación es lo que buscamos.</li>
+                </ul>
+                Usamos la función seno, que relaciona el cateto opuesto y la hipotenusa:
+                <ul>
+                    <li>sen(θ) = cateto opuesto / hipotenusa</li>
+                    <li>sen(θ) = 60 m/80 m, se cancelan los metros.</li>
+                    <li>sen(θ) = 6/8 = 3/4 = 0.75</li>
+                    </ul>
+                Para encontrar el ángulo, usamos la función sin⁻¹ (seno inverso).<br>
+                        Usando la calculadora:
+                        <ul>
+                            
+                            <li>θ = sin⁻¹(0.75)</li>
+                            <li>θ ≈ 48.6°</li>
+                        </ul>
+                    </li>
+                </ul>
+                Redondeando a un decimal, el ángulo de elevación de la cometa es de 48.6°.
+            `
+        };
+
+
+        let currentExerciseId = 1; // Empezamos con el ejercicio 1
+        const totalExercises = 5; // Número total de ejercicios (del 1 al 5)
+        const tolerance = 0.05; // Tolerancia para comparar respuestas numéricas (ajustado para decimales redondeados)
+
+        // Función para mostrar el ejercicio actual
+        function showExercise(id) {
+            // Oculta todos los ejercicios (incluido el mensaje de finalización)
+            document.querySelectorAll('.exercise-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Muestra solo el ejercicio deseado o el mensaje de finalización
+            const currentItem = document.getElementById(`exercise${id}`);
+            if (currentItem) {
+                currentItem.classList.add('active');
+
+                // Asegurarse de que el botón de comprobar esté visible y el de siguiente oculto al cargar un ejercicio nuevo
+                currentItem.querySelector('.btn-check-answer').style.display = 'block';
+                // El botón de siguiente debe estar oculto al cargar un nuevo ejercicio hasta que se compruebe la respuesta
+                currentItem.querySelector('.next-exercise-btn').style.display = 'block';
+
+                // Limpiar inputs al cargar un nuevo ejercicio
+                currentItem.querySelectorAll('input[type="text"]').forEach(input => {
+                    input.value = '';
+                });
+
+                // Limpiar el mensaje de feedback
+                currentItem.querySelector('.feedback').innerHTML = '';
+
+                // Ocultar el nuevo contenedor de la solución si ya existía de una ejecución anterior
+                const solutionWrapper = document.getElementById(`solutionWrapper${id}`);
+                if (solutionWrapper) {
+                    solutionWrapper.style.display = 'none';
+                }
+
+            } else if (id > totalExercises) {
+                // Si no hay más ejercicios, muestra el mensaje de finalización
+                document.getElementById('completionMessage').classList.add('active');
+                // Al finalizar, el botón de reiniciar sí se muestra
+                document.getElementById('completionMessage').querySelector('.next-exercise-btn').style.display = 'block';
+                // Aseguramos que "Volver al Inicio" esté visible
+                const completionCheckBtn = document.getElementById('completionMessage').querySelector('.btn-check-answer');
+                if (completionCheckBtn) {
+                    completionCheckBtn.style.display = 'block';
+                }
+            }
+        }
+
+        // Función para comprobar la respuesta del ejercicio actual
+        function checkAnswer(exerciseNum) {
+            const exerciseAnswers = correctAnswers[exerciseNum];
+            const feedbackMessageDiv = document.getElementById(`feedbackMessage${exerciseNum}`);
+            const currentExerciseDiv = document.getElementById(`exercise${exerciseNum}`);
+
+            // Buscamos o creamos el contenedor principal de la solución
+            let solutionWrapper = document.getElementById(`solutionWrapper${exerciseNum}`);
+            if (!solutionWrapper) {
+                solutionWrapper = document.createElement('div');
+                solutionWrapper.id = `solutionWrapper${exerciseNum}`;
+                solutionWrapper.classList.add('solution-container-wrapper'); // Añade la clase para el estilo y display
+                // Insertamos el wrapper después del div de feedback
+                feedbackMessageDiv.parentNode.insertBefore(solutionWrapper, feedbackMessageDiv.nextSibling);
+            }
+
+            // Buscamos o creamos el elemento para el título de la solución
+            let solutionTitle = document.getElementById(`solutionTitle${exerciseNum}`);
+            if (!solutionTitle) {
+                solutionTitle = document.createElement('span'); // Para 'h4', 'h5', etc.
+                solutionTitle.id = `solutionTitle${exerciseNum}`;
+                solutionTitle.classList.add('solution-title'); // Aplica la clase para centrar
+                solutionWrapper.appendChild(solutionTitle);
+            }
+
+            // Buscamos o creamos el elemento para el contenido de la solución
+            let solutionContent = document.getElementById(`solutionContent${exerciseNum}`);
+            if (!solutionContent) {
+                solutionContent = document.createElement('div'); // Un div para el contenido justificado
+                solutionContent.id = `solutionContent${exerciseNum}`;
+                solutionContent.classList.add('solution-content'); // Aplica la clase para justificar
+                solutionWrapper.appendChild(solutionContent);
+            }
+
+            let allCorrect = true;
+            let feedbackHtml = '';
+            let hasAnyInvalidInput = false; // Bandera para detectar cualquier entrada inválida o vacía
+
+            for (const key in exerciseAnswers) {
+                const inputId = `respuesta${exerciseNum}${key.charAt(0).toUpperCase() + key.slice(1)}`;
+                const inputElement = document.getElementById(inputId);
+
+                if (!inputElement) {
+                    console.error(`Error: Elemento con ID ${inputId} no encontrado para el ejercicio ${exerciseNum}.`);
+                    feedbackHtml += `<p class="incorrect">Error interno: El campo de respuesta esperado no se encontró.</p>`;
+                    allCorrect = false;
+                    hasAnyInvalidInput = true; // Marca como inválido
+                    continue;
+                }
+
+                const rawUserValue = inputElement.value.trim(); // Obtener el valor sin espacios
+                const userAnswer = normalizeInput(rawUserValue);
+                const correctAnswer = exerciseAnswers[key];
+
+                // Comprobamos si está vacío o si no es un número válido después de normalizar
+                if (rawUserValue === '' || isNaN(userAnswer)) {
+                    feedbackHtml += `<p class="incorrect">Por favor, ingresa un número válido.</p>`;
+                    allCorrect = false;
+                    hasAnyInvalidInput = true; // Marca que al menos una entrada es inválida/vacía
+                } else if (Math.abs(userAnswer - correctAnswer) < tolerance) {
+                    feedbackHtml += `<p class="correct">¡Correcto! 🎉</p>`; // Mensaje genérico de éxito
+                } else {
+                    let displayKey = '';
+                    if (key === 'altura') { displayKey = 'Altura del edificio'; }
+                    else if (key === 'distancia') { displayKey = 'Distancia al coche'; }
+                    else if (key === 'distanciaAvion') { displayKey = 'Distancia del avión a la pista'; }
+                    else if (key === 'distanciaPared') { displayKey = 'Distancia a la pared'; }
+                    else if (key === 'angulo') { displayKey = 'Ángulo de elevación'; }
+                    else { displayKey = key.replace(/([A-Z])/g, ' $1').trim(); } // Fallback genérico
+
+                    feedbackHtml += `<p class="incorrect">${displayKey}: Incorrecto. </p>`; // Mantiene el nombre del campo para respuestas incorrectas
+                    allCorrect = false; // No es todo correcto
+                }
+            }
+
+            feedbackMessageDiv.innerHTML = feedbackHtml;
+
+
+            // Lógica para mostrar/ocultar la solución y los botones
+            if (allCorrect && !hasAnyInvalidInput) { // Solo si todo es correcto y no hay entradas inválidas
+                solutionWrapper.style.display = 'none'; // Oculta todo el contenedor de la solución
+                currentExerciseDiv.querySelector('.btn-check-answer').style.display = 'none'; // Oculta "Comprobar"
+                currentExerciseDiv.querySelector('.next-exercise-btn').style.display = 'block'; // Muestra "Siguiente"
+            } else {
+                // Si alguna respuesta es incorrecta o inválida, muestra la solución y mantiene visible el botón de comprobar.
+                solutionTitle.innerHTML = `Solución:`; // Asigna el título
+                solutionContent.innerHTML = allSolutionsContent[exerciseNum];
+                solutionWrapper.style.display = 'block'; // Asegura que la solución se muestre
+                currentExerciseDiv.querySelector('.btn-check-answer').style.display = 'block'; // Mantiene "Comprobar" visible
+                currentExerciseDiv.querySelector('.next-exercise-btn').style.display = 'none'; // Oculta "Siguiente" hasta que esté correcto
+
+                if (typeof MathJax !== 'undefined') {
+                    MathJax.typesetPromise([solutionContent]).then(() => {
+                        console.log('MathJax typeset complete for solution ' + exerciseNum);
+                    }).catch((err) => {
+                        console.error('MathJax typeset error:', err);
+                    });
+                } else {
+                    console.warn('MathJax no está definido. Asegúrate de que el script de MathJax se cargue correctamente.');
+                }
+            }
+        }
+
+        // Función para pasar al siguiente ejercicio
+        function nextExercise() {
+            currentExerciseId++;
+            showExercise(currentExerciseId);
+        }
+
+        // Función para reiniciar los ejercicios
+        function resetExercises() {
+            currentExerciseId = 1; // Vuelve al primer ejercicio
+            showExercise(currentExerciseId); // Muestra el primer ejercicio
+            // Oculta el mensaje de finalización si estaba visible
+            document.getElementById('completionMessage').classList.remove('active');
+        }
+
+        // Mostrar el primer ejercicio al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            showExercise(currentExerciseId);
+
+            // Asegurar que los botones de la página de finalización también disparen las funciones correctas
+            const volverInicioBtn = document.getElementById('completionMessage').querySelector('.btn-check-answer');
+            if (volverInicioBtn) {
+                volverInicioBtn.addEventListener('click', function () {
+                    location.href = '../index.html';
+                });
+            }
+
+            const reiniciarEjerciciosBtn = document.getElementById('completionMessage').querySelector('.next-exercise-btn');
+            if (reiniciarEjerciciosBtn) {
+                reiniciarEjerciciosBtn.addEventListener('click', function () {
+                    resetExercises();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

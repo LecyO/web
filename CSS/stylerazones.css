@@ -1,0 +1,635 @@
+:root {
+    --darkblu: rgb(29, 35, 123);
+    --blu: rgb(77, 161, 221);
+    --yelow: rgb(212, 195, 65);
+    --red: rgb(195, 67, 35);
+    --primary: rgb(148, 148, 148); /* Para sombras y acentos */
+    --secondary: rgb(69, 69, 69); /* Color de fondo original del body y aside */
+    --transecondary: rgba(69,69,69, 0.6); /*fondo semi-transparente claro */
+    --terciary: rgb(215, 215, 215); /* Color de texto claro */
+    --fourty: rgb(23, 23, 23); /* Fondo principal (alternativo si prefieres más oscuro) */
+    --transfourty: rgba(23, 23, 23, 0.7); /* Fondo semi-transparente para captions */
+    --fifty: rgb(86, 86, 86); /* Fondo del botón Empezar */
+}
+
+/*-----------------------BODY-----------------------*/
+body {
+    font-family: 'Fredoka', sans-serif;
+    background-image: url(../Imagenes/fondos/fondoRojo.jpg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position: center ;
+    color: var(--terciary);
+    margin: 0; /* Elimina todos los márgenes por defecto del body */
+    padding: 0; /* Elimina todo el padding por defecto del body */
+    overflow-x: hidden; /* Evita el scroll horizontal */
+    display: block; /* Asegura que el body se comporte como bloque y los elementos se apilen */
+}
+
+/*--------------CARRUSEL----------------*/
+
+.carrusel-container {
+    width: 100%; /* ¡Abarca todo el ancho de la pantalla! */
+    max-width: none; /* Elimina cualquier límite de ancho máximo */
+    margin: 0; /* Asegura que no tenga márgenes laterales */
+    box-shadow: 0px 5px 15px 5px var(--primary);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px; /* Margen debajo del carrusel para separar del aside */
+}
+
+/* Estilos para las imágenes dentro de cada diapositiva del carrusel */
+.carousel-item img {
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    height: auto;
+    min-height: 320px; /* Altura mínima un poco mayor para móviles */
+    max-height: 650px; /* Altura máxima para pantallas grandes */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Estilos para el botón "Empezar" */
+.Go {
+    padding: 12px 30px;
+    background-color: var(--fifty);
+    color: var(--terciary);
+    border-radius: 30px;
+    font-family: 'Paytone One', sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.8s ease-in, color 0.8s ease-in-out, transform 0.4s ease;
+    border: none;
+    display: inline-block;
+    font-size: 1.1em;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.Go:hover {
+    background-color: var(--terciary);
+    color: var(--fourty);
+    transform: translate(-50%, -50%) scale(1.05);
+}
+
+/* Estilos para las leyendas del carrusel */
+.carousel-caption {
+    background-color: var(--transfourty);
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+.carousel-caption h5 {
+    font-family: 'Righteous', cursive;
+    font-size: 1.8em;
+    color: var(--yelow);
+    margin-bottom: 5px;
+}
+
+.carousel-caption p {
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Estilos para los controles de navegación del carrusel (flechas) */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/*--------------------ASIDE (TEOREMA DE PITÁGORAS)----------------*/
+
+aside {
+    padding: 20px;
+    background-color: var(--secondary);
+    color: var(--terciary);
+    font-family: 'Cal Sans', sans-serif;
+    /* Restaura las propiedades originales del aside para que tenga sus márgenes y ancho */
+    width: 90%; /* Ancho para móviles */
+    max-width: 400px; /* Ancho máximo original para el aside */
+    margin: 20px auto; /* Centrado horizontal y margen vertical, como estaba antes */
+    border-radius: 10px; /* Vuelve a los bordes redondeados */
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    box-sizing: border-box; /* Crucial para incluir padding y borde dentro del width */
+}
+
+aside h2 {
+    font-family: 'Coming Soon', cursive;
+    font-weight: bold;
+    background-color: var(--transfourty);
+    color: var(--red);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+aside p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+aside .a {
+    color: var(--darkblu);
+    font-weight: bold;
+}
+
+aside .b {
+    color: var(--yelow);
+    text-decoration: none;
+    font-weight: bold;
+}
+aside .b:hover {
+    text-decoration: underline;
+}
+
+aside img {
+    object-fit: contain;
+    width: 80%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 10%;
+    box-shadow: 0px 0px 15px var(--primary);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/*-------------------------MEDIA QUERIES PARA RESPONSIVIDAD-----------------*/
+/* Ajustes para pantallas de tabletas (min-width: 768px) */
+@media (min-width: 768px) {
+    .carousel-item img {
+        min-height: 450px;
+    }
+
+    .Go {
+        padding: 15px 35px;
+        font-size: 1.2em;
+    }
+
+    .carousel-caption h5 {
+        font-size: 2.2em;
+    }
+
+    .carousel-caption p {
+        font-size: 1.1em;
+    }
+
+    /* Restaurar el aside a su ancho y centrado original en tabletas */
+    aside {
+        width: 80%; /* Ancho para tabletas */
+        max-width: 500px; /* Ancho máximo */
+        margin: 30px auto; /* Centrado y espaciado */
+    }
+
+    aside img {
+        width: 100%;
+        max-width: none;
+    }
+
+    .formula-pitagoras {
+        font-size: 2.5rem;
+    }
+}
+
+/* Ajustes para pantallas de escritorio (min-width: 992px) */
+@media (min-width: 992px) {
+    .carousel-item img {
+        min-height: 550px;
+    }
+
+    .Go {
+        padding: 18px 40px;
+        font-size: 1.3em;
+    }
+
+    .carousel-caption h5 {
+        font-size: 2.5em;
+    }
+
+    .carousel-caption p {
+        font-size: 1.2em;
+    }
+
+    /* Restaurar el aside a su ancho y centrado original en escritorio */
+    aside {
+        width: 60%; /* Ancho para escritorio */
+        max-width: 450px; /* Ancho máximo */
+        margin: 40px auto; /* Centrado y espaciado */
+    }
+
+    .formula-pitagoras {
+        font-size: 2.8rem;
+    }
+}
+/*---------------------------------------------ESTILOS ESPECÍFICOS DE RAZONESTRIGONOMÉTRICAS.HTML-------------------------------------------*/
+
+.section-title {
+    font-family: 'Righteous', cursive;
+    color: var(--yelow);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.8em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    padding-top: 20px;
+}
+
+.extra-content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.material-symbols-outlined{
+    color: var(--yelow);
+    width: 10px;
+}
+
+.material-symbols-outlined:hover{
+    color: var(--red);
+}
+
+.extra-content .icon-link {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.extra-content .pita {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+/* mostrar imagen al pasar el mouse por el enlace */
+.extra-content .icon-link:hover + .pita {
+    opacity: 1;
+}
+
+/*----CONTENIDO----*/
+.content-card {
+    background-color: var(--transecondary);
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+    padding: 30px;
+    margin-bottom: 30px;
+    color: var(--terciary);
+    line-height: 1.7;
+}
+.content-card h3 {
+    font-family: 'Coming Soon', cursive;
+    color: var(--blu);
+    margin-bottom: 20px;
+    font-size: 1.8em;
+    font-weight: bold;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+.content-card h4{
+    font-family: 'Coming Soon',;
+    color: var(--primary);
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.content-card p {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+.content-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+.content-card ul li {
+    margin-bottom: 10px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.05em;
+}
+
+.formula-display {
+    font-family: 'Times New Roman', serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--yelow);
+    text-align: center;
+    margin: 30px 0;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
+}
+.content-card img, .img-example{
+    max-height: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+    filter: hue-rotate(180deg) brightness(80%);
+
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 (altura / ancho) */
+    height: 0;
+    overflow: hidden;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 10px;
+}
+.exercise-section {
+    background-color: var(--red);
+    padding: 30px;
+    border-radius: 15px;
+    margin-top: 40px;
+    color: var(--terciary);
+    text-align: center;
+}
+.exercise-section h3 {
+    color: var(--yelow);
+    font-family: 'frekoka', cursive;
+    margin-bottom: 20px;
+}
+.exercise-section a {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.exercise-section button:hover {
+    background-color: var(--darkblu --fifty);
+}
+
+/*--------modo responsive razonesTrigonométricas.html--------------*/
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 3.5em;
+    }
+    .content-card {
+        padding: 40px;
+    }
+    .content-card h3 {
+        font-size: 2em;
+    }
+    .content-card p {
+        font-size: 1.15em;
+    }
+    .formula-display {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .section-title {
+        font-size: 4.5em;
+    }
+    .content-card {
+        padding: 50px;
+    }
+    .content-card h3 {
+        font-size: 2.2em;
+    }
+    .content-card p {
+        font-size: 1.2em;
+    }
+    .formula-display {
+        font-size: 4rem;
+    }
+}
+/*----------------------------------------------ESTILOS ESPECÍFICOS DE EJERCICIOSRAZONES.HTML----------------------------------------------*/
+.exercise-container {
+    background-color: var(--secondary);
+    border-radius: 15px;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+    padding: 30px;
+    margin-bottom: 30px;
+    color: var(--terciary);
+    text-align: center;
+}
+.exercise-container h3 {
+    font-family: 'Coming Soon', cursive;
+    color: var(--yelow);
+    margin-bottom: 25px;
+    font-size: 2em;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 10px;
+}
+.exercise-type { /* Nuevo estilo para el tipo de ejercicio */
+    font-family: 'Fredoka', sans-serif;
+    font-size: 0.7em; /* Más pequeño que el título del ejercicio */
+    color: var(--primary); /* O el color que prefieras para destacarlo */
+    display: block; /* Para que aparezca en una nueva línea o debajo del título */
+    margin-top: 5px;
+}
+.exercise-question p {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+.exercise-diagram {
+    max-width: 80%;
+    max-height: 80%;
+    width: 50%;
+    height: 40%;
+    display: block;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+.input-group-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+.input-group-custom label {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.1em;
+    color: var(--terciary);
+    margin-right: 10px;
+    margin-bottom: 10px; /* Espacio para el wrap */
+    min-width: 80px; /* Asegura que la etiqueta tenga un ancho mínimo */
+    text-align: right;
+}
+.input-group-custom input[type="text"] { /* Cambiado a type="text" */
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--primary);
+    background-color: var(--fourty);
+    color: var(--terciary);
+    font-size: 1.1em;
+    width: 120px; /* Ancho fijo para el input */
+    text-align: center;
+    margin-bottom: 10px; /* Espacio para el wrap */
+}
+.btn-check-answer {
+    background-color: var(--blu);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+.btn-check-answer:hover {
+    background-color: var(--darkblu);
+}
+.feedback {
+    margin-top: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: 'Fredoka', sans-serif;
+}
+.feedback.correct {
+    color: limegreen;
+}
+.feedback.incorrect {
+    color: var(--red);
+}
+.next-exercise-btn {
+    background-color: var(--fifty);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 30px;
+    display: block; /* Oculto por defecto */
+}
+.next-exercise-btn:hover {
+    background-color: var(--darkblu);
+}
+.solution-text {
+    margin-top: 15px;
+    font-size: 1.1em;
+    color: var(--primary);
+    display: none; /* Oculto por defecto */
+    text-align: left; /* Para que las soluciones largas se lean mejor */
+    text-align: justify;
+} 
+.solution-text p {
+    margin-bottom: 5px; /* Espacio entre líneas de solución */
+}
+
+
+/* Media Queries para responsividad de ejerciciosTrigonometria.html */
+@media (max-width: 576px) { /* Móviles pequeños */
+    .input-group-custom {
+        flex-direction: column; /* Apila etiquetas e inputs en pantallas muy pequeñas */
+        align-items: center;
+    }
+    .input-group-custom label {
+        text-align: center;
+        width: 100%;
+        margin-right: 0;
+    }
+    .input-group-custom input {
+        max-width: 150px; /* Limita el ancho del input en móviles */
+        width: 100%;
+    }
+    .btn-check-answer {
+        width: 100%;
+        padding: 10px 20px;
+    }
+    .exercise-type {
+        font-size: 0.6em;
+    }
+}
+
+@media (min-width: 768px) {
+    .exercise-container h3 {
+        font-size: 2.5em;
+    }
+    .exercise-question p {
+        font-size: 1.3em;
+    }
+    .input-group-custom input[type="text"] {
+        width: 150px;
+    }
+    .btn-check-answer {
+        font-size: 1.2em;
+    }
+    .exercise-type {
+        font-size: 0.8em;
+        display: inline; /* Vuelve a línea si hay espacio */
+        margin-left: 10px;
+    }
+}
+@media (min-width: 992px) {
+    .exercise-container h3 {
+        font-size: 3em;
+    }
+    .exercise-question p {
+        font-size: 1.4em;
+    }
+    .input-group-custom input[type="text"] {
+        width: 180px;
+    }
+    .exercise-type {
+        font-size: 0.9em;
+    }
+}
+.btn-check-answer {
+    background-color: var(--blu);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px; 
+    display: block;
+    margin-left: auto; /* Centra horizontalmente */
+    margin-right: auto; /* Centra horizontalmente */
+    width: fit-content; /* Ocupa solo el ancho de su contenido */
+}
+@media (max-width: 576px) {
+    .btn-check-answer {
+        max-width: 100%; /* Permite que el botón ocupe casi todo el ancho disponible */
+        padding: 10px 20px; /* Un poco menos padding en móviles pequeños */
+        font-size: 1em; /* Un poco más pequeño en móviles */
+    }
+    }

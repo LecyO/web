@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Razones Trigonométricas - Guía de Trigonometría</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+
+    <link href="../Iconos/Logo Grebil.png" type="image/x-icon" rel="shortcut icon">
+
+    <link rel="stylesheet" href="../CSS/stylerazones.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Coming+Soon&family=Fredoka:wght@300..700&family=Paytone+One&family=Righteous&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Estilos específicos para este nuevo enfoque de mostrar/ocultar ejercicios */
+        .exercise-item {
+            display: none;
+            /* Oculta todos los ejercicios por defecto */
+        }
+
+        .exercise-item.active {
+            display: block;
+            /* Muestra solo el ejercicio activo */
+        }
+
+        .solution-title {
+            font-family: 'Cal Sans', sans-serif;
+            font-weight: bold;
+            font-size: 2em;
+            text-align: left;
+            /* Centra el título de la solución */
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .solution-content {
+            font-family: 'Cal Sans', sans-serif;
+            line-height: 2.2;
+            font-size: 1.1em;
+            text-align: justify;
+            /* Justifica el contenido de la solución */
+        }
+
+        /* Estilos para el feedback */
+        .feedback p {
+            margin-bottom: 0.5rem;
+        }
+
+        .feedback p.correct {
+            color: green;
+            font-weight: bold;
+        }
+
+        .feedback p.incorrect {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-dark py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="../index.html" class="btn btn-outline-light">
+                <i class="bi bi-arrow-left"></i> Volver al Inicio
+            </a>
+            <h1 class="text-white h4 mb-0" style="font-family: 'Righteous', cursive;">Ejercicios Trigonométricos</h1>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <h2 class="section-title">¡A Practicar Razones Trigonométricas!</h2>
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="exercise-container">
+                    <div id="exercise1" class="exercise-item">
+                        <h3>Ejercicio 1 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>1. Dado el siguiente triángulo rectángulo, con cateto opuesto = 9, cateto adyacente = 12
+                                e hipotenusa = 15. Calcula el valor de senα, cosα y tanα para el ángulo α (alpha). Exprese la respuesta en <strong style="color: var(--yelow);">Fracción</strong> o <strong style="color: var(--blu);">Decimal</strong>.</p>
+                            <img src="../Imagenes/razones_trigonometricas/ejercicio1.png" alt="Diagrama de un triángulo rectángulo." class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta1Senα">sen α:</label>
+                            <input type="text" id="respuesta1Senα">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta1Cosα">cos α:</label>
+                            <input type="text" id="respuesta1Cosα">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta1Tanα">tan α:</label>
+                            <input type="text" id="respuesta1Tanα">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(1)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage1"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="exercise2" class="exercise-item">
+                        <h3>Ejercicio 2 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>2. En un triángulo rectángulo, un cateto mide 8 y la hipotenusa mide 10. Si β (beta)
+                                es el ángulo opuesto al cateto de 8. Calcula el valor de senβ, cosβ y tanβ. Responda con una <strong style="color: var(--yelow);">Fracción</strong> o con un número <strong style="color: var(--blu);">Decimal</strong></p>
+                            <img src="../Imagenes/razones_trigonometricas/ejercicio2.jpg" alt="Diagrama de un triángulo rectángulo." class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta2Senβ">senβ:</label>
+                            <input type="text" id="respuesta2Senβ">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta2Cosβ">cosβ:</label>
+                            <input type="text" id="respuesta2Cosβ">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta2Tanβ">tanβ:</label>
+                            <input type="text" id="respuesta2Tanβ">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(2)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage2"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="exercise3" class="exercise-item">
+                        <h3>Ejercicio 3 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>3. En un triángulo rectángulo, los catetos miden 5 y 12. Si el ángulo θ (theta) está
+                                junto al cateto de 12. Determina el valor de senθ, cosθ y tanθ. Responda con una <strong style="color: var(--yelow);">Fracción</strong> o <strong style="color: var(--blu);">Decimal</strong></p>
+                            <img src="../Imagenes/razones_trigonometricas/ejercicio3.jpg" alt="Gráfico o representación de un triángulo con catetos 5 y 12." class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta3Senθ">senθ:</label>
+                            <input type="text" id="respuesta3Senθ">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta3Cosθ">cosθ:</label>
+                            <input type="text" id="respuesta3Cosθ">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta3Tanθ">tanθ:</label>
+                            <input type="text" id="respuesta3Tanθ">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(3)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage3"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="exercise4" class="exercise-item">
+                        <h3>Ejercicio 4 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>4. Un poste de 7 metros de altura tiene un cable tensor de 25 metros anclado al suelo.
+                                Calcula el seno, coseno y tangente del ángulo α (alpha) que forma el cable con el suelo Exprese la respuesta en <strong style="color: var(--yelow);">Fracción</strong> o <strong style="color: var(--blu);">Decimal</strong>.
+                            </p>
+                            <img src="../Imagenes/razones_trigonometricas/ejercicio4.jpg" alt="Diagrama de un poste, cable y ángulo con el suelo." class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta4Senα">senα:</label>
+                            <input type="text" id="respuesta4Senα">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta4Cosα">cosα:</label>
+                            <input type="text" id="respuesta4Cosα">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta4Tanα">tanα:</label>
+                            <input type="text" id="respuesta4Tanα">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(4)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage4"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="exercise5" class="exercise-item">
+                        <h3>Ejercicio 5 <span class="exercise-type"></span></h3>
+                        <div class="exercise-question">
+                            <p>5. Una escalera de 13 metros de largo está apoyada contra una pared. La base de la
+                                escalera está a 5 metros de la pared. Calcula el seno, coseno y tangente del ángulo γ
+                                (gamma) que forma la escalera con el suelo. Exprese su respuesta en una <strong style="color: var(--yelow);">Fracción</strong> o un número <strong style="color: var(--blu);">Decimal</strong></p>
+                            <img src="../Imagenes/razones_trigonometricas/ejercicio5.jpg" alt="Diagrama de una escalera contra una pared." class="exercise-diagram">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta5Senγ">senγ:</label>
+                            <input type="text" id="respuesta5Senγ">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta5Cosγ">cosγ:</label>
+                            <input type="text" id="respuesta5Cosγ">
+                        </div>
+                        <div class="input-group-custom">
+                            <label for="respuesta5Tanγ">tanγ:</label>
+                            <input type="text" id="respuesta5Tanγ">
+                        </div>
+                        <button class="btn-check-answer" onclick="checkAnswer(5)">Comprobar Respuesta</button>
+                        <div class="feedback" id="feedbackMessage5"></div>
+                        <button class="next-exercise-btn" onclick="nextExercise()">Siguiente Ejercicio</button>
+                    </div>
+
+                    <div id="completionMessage" class="exercise-item">
+                        <h3>¡Felicidades!</h3>
+                        <p>Has completado todos los ejercicios de Razones Trigonométricas. ¡Sigue practicando!</p>
+                        <button class="btn-check-answer" onclick="location.href='../index.html'">Volver al Inicio</button>
+                        <button class="next-exercise-btn" style="display: block;" onclick="resetExercises()">Reiniciar
+                            Ejercicios</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>© 2025 Guía a la Trigonometría. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Función para limpiar y normalizar la entrada del usuario
+        function normalizeInput(input) {
+            // Convierte la entrada a cadena y reemplaza comas por puntos, y elimina espacios en blanco.
+            input = String(input).replace(',', '.').trim();
+
+            // Intenta manejar fracciones como "a/b"
+            if (input.includes('/')) {
+                const parts = input.split('/');
+                if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+                    const numerator = parseFloat(parts[0]);
+                    const denominator = parseFloat(parts[1]);
+                    // Asegurar de que el denominador no sea cero para evitar división por cero
+                    if (denominator !== 0) {
+                        return numerator / denominator;
+                    }
+                }
+            }
+            // Si no es una fracción válida o no contiene '/', intenta convertir directamente a flotante.
+            return parseFloat(input);
+        }
+
+        // Definición de las respuestas correctas para cada ejercicio
+        const correctAnswers = {
+            1: {
+                senα: 3 / 5, // 0.6
+                cosα: 4 / 5, // 0.8
+                tanα: 3 / 4 // 0.75
+            },
+            2: { // Cateto opuesto=8, Hipotenusa=10. Cateto adyacente = √(10^2 - 8^2) = √100-64 = √36 = 6
+                senβ: 4 / 5, // 0.8
+                cosβ: 3 / 5, // 0.6
+                tanβ: 4 / 3 // 1.33
+            },
+            3: { // Catetos 5 y 12. Hipotenusa = √(5^2 + 12^2) = √25+144 = √169 = 13. Angulo adyacente a 12.
+                senθ: 5 / 13, // 0.38
+                cosθ: 12 / 13, // 0.92
+                tanθ: 5 / 12 // 0.42
+            },
+            4: { // Poste=7 (opuesto), Cable=25 (hipotenusa). Cateto adyacente = √(25^2 - 7^2) = √625-49 = √576 = 24
+                senα: 7 / 25, // 0.28
+                cosα: 24 / 25, // 0.96
+                tanα: 7 / 24 // 0.29
+            },
+            5: { // Escalera=13 (hipotenusa), Base=5 (adyacente). Cateto opuesto = √(13^2 - 5^2) = √169-25 = √144 = 12
+                senγ: 12 / 13, // 0.92
+                cosγ: 5 / 13, // 0.38
+                tanγ: 12 / 5 // 2.4
+            }
+        };
+
+        const allSolutionsContent = {
+            1: `
+                Para el Ejercicio 1, tenemos un triángulo rectángulo con:
+                <ul>
+                    <li>Cateto Opuesto = 9</li>
+                    <li>Cateto Adyacente = 12</li>
+                    <li>Hipotenusa = 15</li>
+                </ul>
+                Las razones trigonométricas se definen así:
+                <ol>
+                    <li>Seno (senα) es el Cateto Opuesto dividido por la Hipotenusa.
+                        Entonces:</li> 
+                        <ul>
+                                <li>senα = co/h</li>
+                                <li>senα = 9/15 = 3/5 = 0.6</li>
+                                </ul>
+                                La respuesta es: 3/5 o 0.6
+                    <li>Coseno (cosα) es el Cateto Adyacente dividido por la Hipotenusa.
+                        Entonces:</li>
+                        <ul>
+                                <li>cosα = ca/h</li>
+                                <li>cosα = 12/15 = 4/5 = 0.8</li>
+                                </ul>
+                                La respuesta es: 4/5 o 0.8
+                    <li>Tangente (tanα) es el Cateto Opuesto dividido por el Cateto Adyacente.
+                        Entonces:</li>
+                        <ul>
+                                <li>tanα = co/ca</li>
+                                <li>tanα = 9/12 = 3/4 = 0.75</li>
+                                </ul>
+                                La respuesta es: 3/4 o 0.75
+                </ol>
+            `,
+            2: `
+                Para el Ejercicio 2, tenemos un triángulo rectángulo donde:
+                <ul>
+                    <li>Cateto Opuesto al ángulo β = 8</li>
+                    <li>Hipotenusa = 10</li>
+                </ul>
+                Primero, necesitamos calcular el Cateto Adyacente. Usamos el Teorema de Pitágoras (c² = a² + b²).
+                Despejando la formula sería: b² = c² - a², ya que tenemos que encontrar el cateto adyacente.
+                En donde: cateto opuesto es a, cateto adyacente es b, y la hipotenusa es c.</li>
+                <li>b² = c² - a²</li>
+                <li>b² = 10² - 8²</li>
+                <li>b² = 100 - 64</li>
+                <li>b  = √36 = 6</li>
+                Entonces, el Cateto Adyacente es 6.
+                <br>
+                <br>Ahora, las razones trigonométricas para el ángulo β, con los datos que ya tenemos:
+                <li>Cateto Adyacente (ca) al ángulo β  = 6</li>
+                    <li>Cateto Opuesto (co) al ángulo β = 8</li>
+                    <li>Hipotenusa (h) = 10</li>
+                <ol>
+                    <li>Seno (senβ) es el Cateto Opuesto / Hipotenusa.
+                        Entonces:</li>
+                        <ul>
+                               <li>senβ = co/h</li>
+                               <li>senβ = 8/10 = 4/5 = 0.8</li>
+                               </ul>
+                               La respuesta es: 4/5 o 0.8
+                    <li>Coseno (cosβ) es el Cateto Adyacente / Hipotenusa.
+                        Entonces:</li>
+                        <ul>
+                               <li>cosβ = ca/h</li>
+                               <li>cosβ = 6/10 = 3/5 = 0.6</li>
+                               </ul>
+                               La respuesta es: 3/5 o 0.6 
+                    <li>Tangente (tanβ) es el Cateto Opuesto / Cateto Adyacente.
+                        Entonces:</li>
+                        <ul>
+                               <li>tanβ = co/ca</li>
+                               <li>tanβ = 8/6 = 4/3 ≈ 1.33</li>
+                             </ul>
+                             La respuesta es: 4/3 o 1.33
+                </ol>
+            `,
+            3: `
+                Para el Ejercicio 3, tenemos un triángulo rectángulo con catetos de 5 y 12.
+                Primero, necesitamos calcular la Hipotenusa. Usamos el Teorema de Pitágoras (c²= a² + b²)<br>
+                En este caso: cateto opuesto es 5, cateto adyacente es 12 y la hipotenusa es lo que debemos encontrar:
+                <li>c² = a + b</li>
+                <li>c² = 5² + 12²</li>
+                <li>c² = 25 + 144</li>
+                <li>c = √169 = 13</li>
+                Entonces, la Hipotenusa es 13. <br>
+                <br>El cateto que mide 12 es el adyacente al ángulo θ. Esto significa que:
+                <ul>
+                    <li>Cateto Adyacente (ca) al ángulo θ = 12</li>
+                    <li>Cateto Opuesto (co) al ángulo θ = 5</li>
+                    <li>Hipotenusa (h) = 13</li>
+                </ul>
+                Ahora, las razones trigonométricas para el ángulo θ:
+                <ol>
+                    <li>Seno (senθ) es el Cateto Opuesto / Hipotenusa.<br>
+                        Entonces:</li>
+                        <ul>
+                               <li>senθ = co/h</li>
+                               <li>senθ = 5/13 ≈ 0.38</li>
+                               </ul>
+                               La respuesta es: 5/13 o 0.38
+                    <li>Coseno (cosθ) es el Cateto Adyacente / Hipotenusa.<br>
+                        Entonces:</li>
+                        <ul>
+                               <li>cosθ = ca/h</li>
+                               <li>senθ = 12/13 ≈ 0.92</li>
+                               </ul>
+                               La respuesta es: 12/13 o 0.92
+                    <li>Tangente (tanθ) es el Cateto Opuesto / Cateto Adyacente.<br>
+                        Entonces:</li>
+                        <ul>
+                               <li>tanθ = co/ca</li>
+                               <li>tanθ = 5/12 ≈ 0.42</li>
+                               </ul>
+                               La respuesta es: 5/12 o 0.42
+                </ol>
+            `,
+            4: `
+                Para el Ejercicio 4, formamos un triángulo rectángulo con la altura del poste, la distancia en el suelo y el cable tensor.
+                <ul>
+                    <li>Altura del poste (Cateto Opuesto al ángulo α) = 7 metros</li>
+                    <li>Longitud del cable (Hipotenusa) = 25 metros</li>
+                </ul>
+                Primero, necesitamos calcular la distancia en el suelo desde la base del poste hasta el anclaje del cable (Cateto Adyacente). Usamos el Teorema de Pitágoras (c²= a² + b²)<br>
+                Despejando la formula sería: b² = c² - a², ya que tenemos que encontrar el cateto adyacente.<br>
+                En donde: cateto opuesto es a, cateto adyacente es b (lo que vamos a encontar), y la hipotenusa es c.
+                <li>b² = c²-a²</li>
+                <li>b² = 25² - 7²</li>
+                <li>b² = 625 - 49</li>
+                <li>b  = √576 = 24 metros.</li>
+                La base del triángulo (cateto adyacente) mide 24 metros.<br>
+                <br>Ahora, las razones trigonométricas para el ángulo α, con los siguientes datos:
+                <ul>
+                    <li>Cateto Adyacente (ca) al ángulo α = 24</li>
+                    <li>Cateto Opuesto (co) al ángulo α = 7</li>
+                    <li>Hipotenusa (h) = 25</li>
+                </ul>
+                <ol>
+                    <li>Seno (senα) es el Cateto Opuesto / Hipotenusa.
+                        Entonces:</li>
+                        <ul>
+                        <li>senα = co/h</li>
+                        <li>senα = 7/25 = 0.28</li>
+                        </ul>
+                        La respuesta es: 7/25 o 0.28
+                        
+                    <li>Coseno (cosα) es el Cateto Adyacente / Hipotenusa.
+                        Entonces:</li>
+                        <ul>
+                        <li>cosα = ca/h</li>
+                        <li>cosα = 24/25 = 0.96</li>
+                        </ul>
+                        La respuesta es: 24/25 o 0.96
+                        
+                    <li>Tangente (tanα) es el Cateto Opuesto / Cateto Adyacente.
+                        Entonces:</li>
+                        <ul>
+                        <li>tanα = co/ca</li>
+                        <li>tanα = 7/24 = 0.29</li>
+                        </ul>
+                        La respuesta es: 7/25 o 0.29
+                </ol>
+            `,
+            5: `
+                Para el Ejercicio 5, la escalera, la pared y el suelo forman un triángulo rectángulo.
+                <ul>
+                    <li>Longitud de la escalera (Hipotenusa) = 13 metros</li>
+                    <li>Distancia de la base de la escalera a la pared (Cateto Adyacente al ángulo γ) = 5 metros</li>
+                </ul>
+                Primero, necesitamos calcular la altura que alcanza la escalera en la pared (Cateto Opuesto al ángulo γ). Usamos el Teorema de Pitágoras (c²= a² + b²)<br>
+                Despejando la formula sería: a² = c² - b², ya que tenemos que encontrar el cateto opuesto.<br>
+                En donde: cateto opuesto es a (lo que vamos a encontrar), cateto adyacente es b, y la hipotenusa es c.
+                <li>a² = c² - b²</li>
+                <li>a² = 13² - 5²</li>
+                <li>a² = 169 - 25</li>
+                <li>a  = √144 = 12 metros.</li>
+                El cateto opuesto (altura de la escalera) mide 12 metros.
+                <br>
+                <br>Ahora, las razones trigonométricas para el ángulo γ, con los siguientes datos:
+                <li>Cateto Opuesto (co) al ángulo γ = 12</li>
+                    <li>Cateto Adyacente (ca) al ángulo γ = 5</li>
+                    <li>Hipotenusa (h) = 13</li>
+                <ol>
+                    <li>Seno (senγ) es el Cateto Opuesto / Hipotenusa.
+                        Entonces:</li>
+                        <ul>
+                               <li>senγ = co/h</li>
+                               <li>senγ = 12/13 ≈ 0.92</li>
+                               La respuesta es: 12/13 o 0.92 
+                               </ul>
+                    <li>Coseno (cosγ) es el Cateto Adyacente / Hipotenusa.
+                        Entonces:</li>
+                        <ul>
+                               <li>cosγ = ca/h</li>
+                               <li>cosγ = 5/13 ≈ 0.38</li>
+                               La respuesta es: 5/13 o 0.38 
+                               </ul>
+                    <li>Tangente (tanγ) es el Cateto Opuesto / Cateto Adyacente.
+                        Entonces:</li>
+                        <ul>
+                               <li>tanγ = co/ca</li>
+                               <li>tanγ = 12/5 ≈ 2.4</li>
+                               La respuesta es: 12/5 o 2.4 
+                               </ul>
+                </ol>
+            `
+        };
+
+
+        let currentExerciseId = 1; // Empezamos con el ejercicio 1
+        const totalExercises = 5; // Número total de ejercicios (del 1 al 5)
+        const tolerance = 0.005; // Tolerancia para comparar respuestas numéricas (útil para decimales redondeados)
+
+        // Función para mostrar el ejercicio actual
+        function showExercise(id) {
+            // Oculta todos los ejercicios (incluido el mensaje de finalización)
+            document.querySelectorAll('.exercise-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Muestra solo el ejercicio deseado o el mensaje de finalización
+            const currentItem = document.getElementById(`exercise${id}`);
+            if (currentItem) {
+                currentItem.classList.add('active');
+
+                // Asegurarse de que el botón de comprobar esté visible y el de siguiente oculto al cargar un ejercicio nuevo
+                currentItem.querySelector('.btn-check-answer').style.display = 'block';
+                // El botón de siguiente debe estar oculto al cargar un nuevo ejercicio hasta que se compruebe la respuesta
+                currentItem.querySelector('.next-exercise-btn').style.display = 'block';
+
+                // Limpiar inputs al cargar un nuevo ejercicio
+                currentItem.querySelectorAll('input[type="text"]').forEach(input => {
+                    input.value = '';
+                });
+
+                // Limpiar el mensaje de feedback
+                currentItem.querySelector('.feedback').innerHTML = '';
+
+                // Ocultar el nuevo contenedor de la solución si ya existía de una ejecución anterior
+                const solutionWrapper = document.getElementById(`solutionWrapper${id}`);
+                if (solutionWrapper) {
+                    solutionWrapper.style.display = 'none';
+                }
+
+            } else if (id > totalExercises) {
+                // Si no hay más ejercicios, muestra el mensaje de finalización
+                document.getElementById('completionMessage').classList.add('active');
+                // Al finalizar, el botón de reiniciar sí se muestra
+                document.getElementById('completionMessage').querySelector('.next-exercise-btn').style.display = 'block';
+                // Aseguramos que "Volver al Inicio" esté visible
+                const completionCheckBtn = document.getElementById('completionMessage').querySelector('.btn-check-answer');
+                if (completionCheckBtn) {
+                    completionCheckBtn.style.display = 'block';
+                }
+            }
+        }
+
+        // Función para comprobar la respuesta del ejercicio actual
+        function checkAnswer(exerciseNum) {
+            const exerciseAnswers = correctAnswers[exerciseNum];
+            const feedbackMessageDiv = document.getElementById(`feedbackMessage${exerciseNum}`);
+            const currentExerciseDiv = document.getElementById(`exercise${exerciseNum}`);
+
+            // Buscamos o creamos el contenedor principal de la solución
+            let solutionWrapper = document.getElementById(`solutionWrapper${exerciseNum}`);
+            if (!solutionWrapper) {
+                solutionWrapper = document.createElement('div');
+                solutionWrapper.id = `solutionWrapper${exerciseNum}`;
+                solutionWrapper.classList.add('solution-container-wrapper'); // Añade la clase para el estilo y display
+                // Insertamos el wrapper después del div de feedback
+                feedbackMessageDiv.parentNode.insertBefore(solutionWrapper, feedbackMessageDiv.nextSibling);
+            }
+
+            // Buscamos o creamos el elemento para el título de la solución
+            let solutionTitle = document.getElementById(`solutionTitle${exerciseNum}`);
+            if (!solutionTitle) {
+                solutionTitle = document.createElement('span'); // Para 'h4', 'h5', etc.
+                solutionTitle.id = `solutionTitle${exerciseNum}`;
+                solutionTitle.classList.add('solution-title'); // Aplica la clase para centrar
+                solutionWrapper.appendChild(solutionTitle);
+            }
+
+            // Buscamos o creamos el elemento para el contenido de la solución
+            let solutionContent = document.getElementById(`solutionContent${exerciseNum}`);
+            if (!solutionContent) {
+                solutionContent = document.createElement('div'); // Un div para el contenido justificado
+                solutionContent.id = `solutionContent${exerciseNum}`;
+                solutionContent.classList.add('solution-content'); // Aplica la clase para justificar
+                solutionWrapper.appendChild(solutionContent);
+            }
+
+            let allCorrect = true;
+            let feedbackHtml = '';
+            let hasAnyInvalidInput = false; // Bandera para detectar cualquier entrada inválida o vacía
+
+            for (const key in exerciseAnswers) {
+                const inputId = `respuesta${exerciseNum}${key.charAt(0).toUpperCase() + key.slice(1)}`;
+                const inputElement = document.getElementById(inputId);
+
+                if (!inputElement) {
+                    console.error(`Error: Elemento con ID ${inputId} no encontrado para el ejercicio ${exerciseNum}.`);
+                    feedbackHtml += `<p class="incorrect">Error interno: El campo de respuesta esperado no se encontró.</p>`;
+                    allCorrect = false;
+                    hasAnyInvalidInput = true; // Marca como inválido
+                    continue;
+                }
+
+                const rawUserValue = inputElement.value.trim(); // Obtener el valor sin espacios
+                const userAnswer = normalizeInput(rawUserValue);
+                const correctAnswer = exerciseAnswers[key];
+
+                // Comprobamos si está vacío o si no es un número válido después de normalizar
+                if (rawUserValue === '' || isNaN(userAnswer)) {
+                    feedbackHtml += `<p class="incorrect">${key.replace(/([A-Z])/g, ' $1').trim()}: Por favor, ingresa un número o fracción válido.</p>`;
+                    allCorrect = false;
+                    hasAnyInvalidInput = true; // Marca que al menos una entrada es inválida/vacía
+                } else if (Math.abs(userAnswer - correctAnswer) < tolerance) {
+                    // Si es correcto y válido, añade el feedback específico.
+                    feedbackHtml += `<p class="correct">${key.replace(/([A-Z])/g, ' $1').trim()}: ¡Correcto! 🎉</p>`;
+                } else {
+                    // Si es incorrecto pero válido, añade el feedback específico.
+                    feedbackHtml += `<p class="incorrect">${key.replace(/([A-Z])/g, ' $1').trim()}: Incorrecto. </p>`;
+                    allCorrect = false; // No es todo correcto
+                }
+            }
+
+            // Si hay alguna entrada inválida, el mensaje general de feedback lo indicará.
+            // Si todas las entradas son válidas pero algunas son incorrectas, se mostrarán los detalles individuales.
+            if (hasAnyInvalidInput) {
+            }
+
+            feedbackMessageDiv.innerHTML = feedbackHtml;
+
+            // Lógica para mostrar/ocultar la solución y los botones
+            if (allCorrect && !hasAnyInvalidInput) { // Solo si todo es correcto y no hay entradas inválidas
+                solutionWrapper.style.display = 'none'; // Oculta todo el contenedor de la solución
+                currentExerciseDiv.querySelector('.btn-check-answer').style.display = 'none'; // Oculta "Comprobar"
+                currentExerciseDiv.querySelector('.next-exercise-btn').style.display = 'block'; // Muestra "Siguiente"
+            } else {
+                // Si alguna respuesta es incorrecta o inválida, muestra la solución y mantiene visible el botón de comprobar.
+                solutionTitle.innerHTML = `Solución:`; // Asigna el título
+                solutionContent.innerHTML = allSolutionsContent[exerciseNum];
+                solutionWrapper.style.display = 'block'; // Asegura que la solución se muestre
+                currentExerciseDiv.querySelector('.btn-check-answer').style.display = 'block'; // Mantiene "Comprobar" visible
+                currentExerciseDiv.querySelector('.next-exercise-btn').style.display = 'none'; // Oculta "Siguiente" hasta que esté correcto
+            }
+        }
+
+        // Función para pasar al siguiente ejercicio
+        function nextExercise() {
+            currentExerciseId++;
+            showExercise(currentExerciseId);
+        }
+
+        // Función para reiniciar los ejercicios
+        function resetExercises() {
+            currentExerciseId = 1; // Vuelve al primer ejercicio
+            showExercise(currentExerciseId); // Muestra el primer ejercicio
+            // Oculta el mensaje de finalización si estaba visible
+            document.getElementById('completionMessage').classList.remove('active');
+        }
+
+        // Mostrar el primer ejercicio al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            showExercise(currentExerciseId);
+        });
+
+    </script>
+</body>
+
+</html>

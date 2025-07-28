@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teorema de Pitágoras - Guía de Trigonometría</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link href="/Iconos/Logo Grebil.png" type="image/x-icon" rel="shorcut icon">
+    <link rel="stylesheet" href="../CSS/stylepitagoras.css"> 
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Coming+Soon&family=Fredoka:wght@300..700&family=Paytone+One&family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=multimodal_hand_eye" />    <script src="https://unpkg.com/scrollreveal"></script>
+
+    </head>
+<body>
+    <header class="bg-dark py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="../index.html" class="btn btn-outline-light">
+                <i class="bi bi-arrow-left"></i> Volver a Inicio
+            </a>
+            <h1 class="text-white h4 mb-0" style="font-family: 'Righteous', cursive;">Trigonometría Fácil</h1>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <h2 class="section-title">El Fascinante Teorema de Pitágoras</h2>
+
+        <div class="extra-content">
+            <a href="https://es.wikipedia.org/wiki/Pit%C3%A1goras" target="_blank" class="icon-link">
+                <span class="material-symbols-outlined">multimodal_hand_eye</span>
+            </a>
+            <img class="pita" src="../Imagenes/teorema_pitágoras/pitagoras.jpg" alt="Bibliografía de Pitágoras">
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="content-card">
+                    <h3>¿Qué es el Teorema de Pitágoras?</h3>
+                    <p>El Teorema de Pitágoras es uno de los conceptos fundamentales en la geometría euclidiana, especialmente cuando se trabaja con triángulos rectángulos. Establece una relación crucial entre las longitudes de los lados de estos triángulos.</p>
+                    <p>Fue enunciado por el matemático y filósofo griego Pitágoras en el siglo VI a.C., aunque existen evidencias de que esta relación ya era conocida en civilizaciones anteriores como la babilónica y la egipcia.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>La Fórmula Mágica</h3>
+                    <p>El teorema se expresa mediante una fórmula sencilla pero poderosa:</p>
+                    <p class="formula-display">
+                        c² = a² + b²
+                    </p>
+                    <p>Donde:</p>
+                    <ul>
+                        <li><strong style="color: var(--blu);">a</strong> y <strong style="color: var(--blu);">b</strong> son las longitudes de los <strong style="color: var(--darkblu);">catetos</strong> del triángulo (los lados que forman el ángulo recto).</li>
+                        <li><strong style="color: var(--red);">c</strong> es la longitud de la <strong style="color: var(--darkblu);">hipotenusa</strong> (el lado opuesto al ángulo recto, siempre el más largo).</li>
+                    </ul>
+                    <img src="../Imagenes/teorema_pitágoras/pizarramain.jpg " alt="Diagrama de un triángulo rectángulo con a, b, c" class="img-example">
+                    <p>En palabras simples, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos.</p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Ejemplo Visual</h3>
+                    <p>Aquí puedes visualizar cómo se cumple el Enunciado de este teorema:</p>
+                    <div class="video-container">
+                        <video width="100%" controls src="../Videos/teoremaDePitagoras Demostración.mp4"></video>
+                    </div>
+                    <p class="small text-center" style="color: var(--primary);"><i>(El video no necesita Internet)</i></p>
+                </div>
+
+                <div class="content-card">
+                    <h3>¿Para Qué Sirve? Aplicaciones</h3>
+                    <p>Dejando de lado que aquí lo repasamos para llegar a comprender la <strong style="color: var(--primary);">Aplicación de las Funciones Trigonométricas</strong>, el Teorema de Pitágoras es increíblemente útil y tiene aplicaciones en:</p>
+                    <ul>
+                        <li><strong>Construcción y Arquitectura:</strong> Para asegurar la cuadratura de estructuras y calcular distancias diagonales.</li>
+                        <li><strong>Navegación:</strong> En mapas y sistemas GPS para calcular distancias entre dos puntos.</li>
+                        <li><strong>Ingeniería:</strong> En el diseño de puentes, edificios y otras estructuras.</li>
+                        <li><strong>Informática Gráfica:</strong> Para calcular distancias y posiciones en juegos y modelado 3D.</li>
+                        <li><strong>Física:</strong> En el cálculo de vectores y distancias en movimiento.</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h3>Ejemplo Práctico: Calculando la Longitud de una Escalera</h3>
+                    <p>Imagina que tienes una pared de 4 metros de altura (cateto 'a') y quieres colocar una escalera de tal forma que su base esté a 3 metros de la pared (cateto 'b'). ¿Qué longitud mínima debe tener la escalera para alcanzar la parte superior de la pared?</p>
+                    <p>Usamos la fórmula: c² = a² + b²</p>
+                    <p>Conocemos a = 4 metros y b = 3 metros. Queremos encontrar c.</p>
+                    <p style="color: var(--yelow); font-weight: bold;">
+                        c² = 4² + 3² <br>
+                        c² = 16 + 9 <br>
+                        c² = 25 <br>
+                        c = ⟌25 <br>
+                        c = 5 m
+                    </p>
+                    <p>Así, la escalera llega a 5 metros de altura en la pared.</p>
+                    <img src="../Imagenes/teorema_pitágoras/escalera.jpg" alt="Ejemplo de aplicación del Teorema de Pitágoras" class="img-example">
+                    <p class="small text-center" style="color: var(--primary);"><i>(Imagen de ejemplo: un triángulo que ilustra el problema de la escalera)</i></p>
+                </div>
+
+                <div class="content-card">
+                    <h3>Video Explicativo</h3>
+                    <p>Para una explicación más visual, mira este video que resume el Teorema de Pitágoras y cómo aplicarlo:</p>
+                    <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/eTEBvBIz8Ok?si=R5tQhpb9jzS0x66g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                    
+                </div>
+
+                <div class="exercise-section">
+                    <h3>¡Pon a Prueba tus Conocimientos!</h3>
+                    <p>¿Te sientes listo para resolver algunos problemas?</p>
+                    <a href="../Enlaces/ejerciciosTeoremaDePitagoras.html" class="btn btn-primary">Empezar Ejercicios</a> 
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>© 2025 Guía a la Trigonometría. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    ScrollReveal().reveal('.content-card', {
+        duration: 800,
+        distance: '50px',
+        origin: 'bottom',
+        easing: 'ease-in-out',
+        reset: false
+    });
+    ScrollReveal().reveal('.exercise-section', { delay: 500 });
+</script>
+
+    </body>
+</html>
