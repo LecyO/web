@@ -293,7 +293,9 @@ aside img {
     color: var(--terciary);
     line-height: 1.7;
 }
-
+.content-card p{
+    text-align: justify;
+}
 
 h3 {
     font-family: 'Coming Soon', cursive;
@@ -414,3 +416,4 @@ h4{
         font-size: 4rem;
     }
 }
+
