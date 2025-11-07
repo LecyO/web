@@ -344,6 +344,7 @@ body {
   .welcome-content p {
     font-size: 1.2rem;
     line-height: 2;
+   align-text: justify;
   }
 }
 
@@ -554,6 +555,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 
 
