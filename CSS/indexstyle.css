@@ -307,6 +307,7 @@ body {
 
 .storytelling-text {
   flex: 1 1 500px;
+ text-align: justify;
 }
 
 /* Reaprovechamos el título y párrafos existentes */
@@ -557,6 +558,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 
 
