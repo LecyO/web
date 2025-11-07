@@ -327,6 +327,8 @@ body {
   line-height: 2;
   margin-bottom: 20px;
   color: #333;
+    align-text: justify;
+
 }
 
 
@@ -555,6 +557,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 
 
