@@ -315,6 +315,8 @@ aside img {
     font-family: 'Fredoka', sans-serif;
     font-size: 1.1em;
     margin-bottom: 15px;
+    text-align: justify;
+     justify-content: space-between;
 }
 .content-card ul {
     list-style: none;
@@ -635,3 +637,4 @@ aside img {
         font-size: 1em; /* Un poco más pequeño en móviles */
     }
     }
+
