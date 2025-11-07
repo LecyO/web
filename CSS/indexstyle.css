@@ -307,9 +307,10 @@ body {
 
 .storytelling-text {
   flex: 1 1 500px;
+}
+.storytelling-text p{
  text-align: justify;
 }
-
 /* Reaprovechamos el título y párrafos existentes */
 .title-welcome {
   font-family: 'Coming Soon', sans-serif;
@@ -558,6 +559,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 
 
