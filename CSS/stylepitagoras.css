@@ -309,6 +309,8 @@ aside img {
     margin-bottom: 30px;
     color: var(--terciary);
     line-height: 1.7;
+        text-align: justify;
+
 }
 .content-card h3 {
     font-family: 'Coming Soon', cursive;
@@ -435,6 +437,8 @@ aside img {
     }
     .content-card p {
         font-size: 1.2em;
+            text-align: justify;
+
     }
     .formula-display {
         font-size: 4rem;
@@ -609,6 +613,7 @@ input[type="number"]::-webkit-inner-spin-button {
         width: 120px;
     }
 }
+
 
 
 
