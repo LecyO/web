@@ -309,6 +309,10 @@ aside img {
     border-bottom: 2px solid var(--primary);
     padding-bottom: 10px;
 }
+.content-card h4{
+    text-align: justify;
+     justify-content: space-between;
+}
 .content-card p {
     font-family: 'Fredoka', sans-serif;
     font-size: 1.1em;
@@ -639,4 +643,5 @@ aside img {
         font-size: 1em; /* Un poco más pequeño en móviles */
     }
     }
+
 
