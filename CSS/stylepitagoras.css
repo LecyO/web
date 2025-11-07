@@ -323,6 +323,7 @@ aside img {
     font-family: 'Fredoka', sans-serif;
     font-size: 1.1em;
     margin-bottom: 15px;
+    text-align: justify;
 }
 .content-card ul {
     list-style: none;
@@ -607,3 +608,4 @@ input[type="number"]::-webkit-inner-spin-button {
         width: 120px;
     }
 }
+
