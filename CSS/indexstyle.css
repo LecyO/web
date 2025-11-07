@@ -310,6 +310,8 @@ body {
 }
 .storytelling-text p{
  text-align: justify;
+   font-family: 'Fredoka', sans-serif;
+
 }
 /* Reaprovechamos el título y párrafos existentes */
 .title-welcome {
@@ -559,6 +561,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 
 
