@@ -208,7 +208,9 @@ body {
   padding: 0 20px;
   max-width: 1200px;
 }
-
+.contenededor-cajas .p{
+    text-align: justify;
+}
 /* Caja de contenido */
 .caja-aviso {
   background-color:var(--transyelow);
@@ -553,3 +555,4 @@ body {
     margin-top: 10px;
   }
 }
+
