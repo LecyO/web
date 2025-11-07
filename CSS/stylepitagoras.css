@@ -319,7 +319,7 @@ aside img {
     border-bottom: 2px solid var(--primary);
     padding-bottom: 10px;
 }
-.content-card .p {
+.content-card p {
     font-family: 'Fredoka', sans-serif;
     font-size: 1.1em;
     margin-bottom: 15px;
@@ -608,5 +608,6 @@ input[type="number"]::-webkit-inner-spin-button {
         width: 120px;
     }
 }
+
 
 
