@@ -322,7 +322,7 @@ body {
   text-align: center;
 }
 
-.welcome-content p {
+.welcome-content .p {
   font-size: 1.2rem;
   line-height: 2;
   margin-bottom: 20px;
@@ -343,7 +343,7 @@ body {
     font-size: 2.2rem;
   }
 
-  .welcome-content p {
+  .welcome-content .p {
     font-size: 1.2rem;
     line-height: 2;
    align-text: justify;
@@ -557,6 +557,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 
 
