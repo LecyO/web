@@ -310,7 +310,6 @@ body {
 }
 .storytelling-text p{
  text-align: justify;
-  font-weight: bold;
   font-family: 'Cal Sans';
 
 }
@@ -563,6 +562,7 @@ body {
     margin-top: 10px;
   }
 }
+
 
 
 
